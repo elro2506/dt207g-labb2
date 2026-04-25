@@ -78,6 +78,7 @@ app.delete("/experience/:id", (req, res) => {
     });
 });
 
-app.listen(5000, () => {
-    console.log("Servern startar på port 5000");
+const PORT = process.env.PORT || 5000; //Försöker att koppla till Render på detta sätt
+app.listen(PORT, () => {
+    console.log("Servern startar på port " + PORT);
 });
