@@ -1,11 +1,11 @@
 //Importerar sqlite3
-const sqlite3 = require("sqlite3");
+const Database = require("better-sqlite3");
 
 //Skapar databasen
-const db = new sqlite3.Database("./database.db");
+const db = new Database("database.db");
 
 //Skapar tabellen experience om den inte redan finns. Unikt ID för varje post
-db.run(`
+db.exec(`
 CREATE TABLE IF NOT EXISTS experience (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     company TEXT,
